@@ -2,8 +2,12 @@ import React from "react";
 
 const NewsItem = (props) => {
   let { title, description, imageUrl, newsUrl, author, date, source } = props;
+
+  const truncateText = (text, maxLength) => {
+    return text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
+  };
   return (
-    <div className="my-3 shadow p-2 mb-3 bg-white rounded">
+    <div className="my-2 shadow p-2 mb-3 bg-white rounded">
       <div className="card h-100 d-flex flex-fill">
         <div
           style={{
@@ -26,12 +30,13 @@ const NewsItem = (props) => {
             }
             className="card-img-top custom-image"
             alt="..."
+            style={{ aspectRatio: "16/9" }} // Fixed aspect ratio for image
           />
         </div>
 
-        <div className="card-body d-flex flex-column">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
+        <div className="card-body d-flex flex-column align-items: stretch">
+          <h5 className="card-title">{truncateText(title, 110)}</h5>  {/* Truncate title */}
+          <p className="card-text">{truncateText(description, 100)}</p>  {/* Truncate description */}
           <div className="mt-auto text-center">
             <p className="card-text text-muted mb-0">
               By {!author ? "Unknown" : author} on{" "}

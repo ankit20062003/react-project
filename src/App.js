@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './App.css';
 
 import React, { useState } from 'react'
@@ -8,13 +9,14 @@ import LoadingBar from 'react-top-loading-bar'
 
 const App = ()=> {
   const pageSize = 8;
+  //these are for gnews
   // const apiKey = "27840e6a7038cd821f06a3b5d50095f9"
-  const apiKey= "ce4917625357121f901cd519f9bce402"
+  // const apiKey= "ce4917625357121f901cd519f9bce402"
   
-  // const apiKey="533fc00a4e5a4350afb3b8ed0b10ff61"
-  // 533fc00a4e5a4350afb3b8ed0b10ff61
-  // https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=533fc00a4e5a4350afb3b8ed0b10ff61
-  // urlToImage
+  //this one for news.io
+  const apiKey="533fc00a4e5a4350afb3b8ed0b10ff61"
+
+
   const [progress, setProgress] = useState(0)
  
     return (
@@ -142,6 +144,7 @@ const App = ()=> {
           />
         </Routes>
       </Router>
+
     </div>
     )
  
